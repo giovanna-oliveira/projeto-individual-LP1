@@ -1,5 +1,7 @@
 package com.mycompany.projeto.individual.continuada1;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -385,7 +387,7 @@ public class Tela1 extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         contClick++;
         //CPU
-        Double numCPU = (Math.random() * 100 + 1);
+        Double numCPU = ThreadLocalRandom.current().nextDouble(0.0,100);
         totalCPU += numCPU;
 
         lblMediaCPU.setText(String.format("%.2f %%",totalCPU/contClick));
@@ -401,7 +403,7 @@ public class Tela1 extends javax.swing.JFrame {
         }
 
         //Disco
-        Double numDisco = (Math.random() * 100 + 1);
+        Double numDisco = ThreadLocalRandom.current().nextDouble(0.0,100);
         totalDisco += numDisco;
 
         lblMediaDisco.setText(String.format("%.2f %%",totalDisco/contClick));
@@ -417,7 +419,7 @@ public class Tela1 extends javax.swing.JFrame {
         }
 
         //Memoria
-        Double numMemoria = (Math.random() * 100 + 1);
+        Double numMemoria = ThreadLocalRandom.current().nextDouble(0.0,100);
         valorMemoriaAtual = numMemoria/100*8.0;
         totalMemoria += numMemoria;
         mediaMemoria =  totalMemoria/contClick;
